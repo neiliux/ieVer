@@ -2,9 +2,30 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Sandbox for mh.IEVer</title>
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="src/mh.IEVer.js"></script>
+    <script type="text/javascript">
+        'use strict';
+        var sandbox = angular.module('sandbox', ['mh.IEVer'], null);
+        var sandboxCtrl = sandbox.controller('sandboxCtrl', [
+                'IEVer',
+                '$scope',
+                function (
+                        IEVer,
+                        $scope) {
+
+                    $scope.version = IEVer.version();
+
+                }
+        ]);
+    </script>
 </head>
 <body>
-
+    <div data-ng-app="sandbox" data-ng-controller="sandboxCtrl">
+        <div>
+            <span>Version: {{version}}</span>
+        </div>
+    </div>
 </body>
 </html>
