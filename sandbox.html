@@ -1,10 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>Sandbox for mh.IEVer</title>
     <script type="text/javascript" src="lib/angular.js"></script>
     <script type="text/javascript" src="src/mh.IEVer.js"></script>
+    <script type="text/javascript" src="src/userAgentService.js"></script>
+    <!--[if lte IE 8]>
+    <script type="text/javascript">
+        angular.module('ie7sceDisable', [])
+            .config(function($sceProvider) {
+                        $sceProvider.enabled(false);
+            });
+
+        angular.element(document).ready(
+             function() {
+                angular.bootstrap(document, ['sandbox']);
+             }
+         );
+    </script>
+    <![endif]-->
     <script type="text/javascript">
         'use strict';
         var sandbox = angular.module('sandbox', ['mh.IEVer'], null);
@@ -14,9 +29,10 @@
                 function (
                         IEVer,
                         $scope) {
-
                     $scope.version = IEVer.version();
-
+                    $scope.userAgent = IEVer.userAgent();
+                    $scope.isIE = IEVer.isIE();
+                    $scope.ieMajorVersion = IEVer.IEMajorVersion();
                 }
         ]);
     </script>
@@ -25,6 +41,15 @@
     <div data-ng-app="sandbox" data-ng-controller="sandboxCtrl">
         <div>
             <span>Version: {{version}}</span>
+        </div>
+        <div>
+            <span>User Agent: {{userAgent}}</span>
+        </div>
+        <div>
+            <span>Is IE: {{isIE}}</span>
+        </div>
+        <div>
+            <span>IE Major Version: {{ieMajorVersion}}</span>
         </div>
     </div>
 </body>
