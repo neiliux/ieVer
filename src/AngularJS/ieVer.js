@@ -1,7 +1,7 @@
 "use strict";
-var mhIeVer = angular.module('mh.IEVer', [], null);
+var ieVer = angular.module('ieVer', [], null);
 
-mhIeVer.factory('IEVer', [
+ieVer.factory('ieVer', [
 	'userAgentService',
 	function(
 		userAgentService) {

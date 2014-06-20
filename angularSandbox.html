@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Sandbox for mh.IEVer</title>
+    <title>Sandbox for iEVer</title>
     <script type="text/javascript" src="lib/angular.js"></script>
     <script type="text/javascript" src="src/AngularJS/ieVer.js"></script>
     <script type="text/javascript" src="src/AngularJS/userAgentService.js"></script>
@@ -22,17 +22,17 @@
     <![endif]-->
     <script type="text/javascript">
         'use strict';
-        var sandbox = angular.module('sandbox', ['mh.IEVer'], null);
+        var sandbox = angular.module('sandbox', ['ieVer'], null);
         var sandboxCtrl = sandbox.controller('sandboxCtrl', [
-            'IEVer',
+            'ieVer',
             '$scope',
             function (
-                    IEVer,
+                    ieVer,
                     $scope) {
-                $scope.version = IEVer.version();
-                $scope.userAgent = IEVer.userAgent();
-                $scope.isIE = IEVer.isIE();
-                $scope.ieMajorVersion = IEVer.IEMajorVersion();
+                $scope.version = ieVer.version();
+                $scope.userAgent = ieVer.userAgent();
+                $scope.isIE = ieVer.isIE();
+                $scope.ieMajorVersion = ieVer.IEMajorVersion();
             }
         ]);
     </script>

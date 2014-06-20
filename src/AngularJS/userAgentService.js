@@ -1,4 +1,4 @@
-mhIeVer.factory('userAgentService', [
+ieVer.factory('userAgentService', [
 	function() {
 		"use strict";
 		return {
