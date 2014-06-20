@@ -1,4 +1,4 @@
-iEVer
+ieVer
 =====
 
 Collection of vanilla JS Module, JQuery Plugin, and AngularJS Module used to detect IE version.
