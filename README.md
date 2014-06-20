@@ -8,8 +8,10 @@ How to use
 
 Vanilla JS:
 Include ieVerModule.js on your page.
-Inspect the ieVer object which is now available:
-	$("#isIE").text(ieVer.isIE);
-    $("#version").text(ieVer.version);
-    $("#userAgent").text(ieVer.userAgent);
-    $("#majorVersion").text(ieVer.majorVersion);
+Inspect the ieVer object which will be available on the global scope.
+```
+$("#isIE").text(ieVer.isIE);
+$("#version").text(ieVer.version);
+$("#userAgent").text(ieVer.userAgent);
+$("#majorVersion").text(ieVer.majorVersion);
+```
