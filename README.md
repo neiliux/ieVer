@@ -7,7 +7,7 @@ How to use
 ----------
 
 ###AngularJs:
-* Include ieVer.js on your page.
+* Include ieVerNg.js on your page.
 * Add ieVer as a dependency to your Angular module.
 * Inject ieVer into your controller, service, etc.
 ```
@@ -27,7 +27,7 @@ var sandboxCtrl = sandbox.controller('sandboxCtrl', [
 ```
 
 ###jQuery:
-Include ieVer.js on your page.
+Include ieVerJq.js on your page.
 ```
 var ieVer = $.ieVer();
 $("#isIE").text(ieVer.isIE);
