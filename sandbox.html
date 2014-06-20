@@ -2,55 +2,31 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Sandbox for mh.IEVer</title>
-    <script type="text/javascript" src="lib/angular.js"></script>
-    <script type="text/javascript" src="src/mh.IEVer.js"></script>
-    <script type="text/javascript" src="src/userAgentService.js"></script>
-    <!--[if lte IE 8]>
-    <script type="text/javascript">
-        angular.module('ie7sceDisable', [])
-            .config(function($sceProvider) {
-                        $sceProvider.enabled(false);
-            });
-
-        angular.element(document).ready(
-             function() {
-                angular.bootstrap(document, ['sandbox']);
-             }
-         );
-    </script>
-    <![endif]-->
-    <script type="text/javascript">
+    <title>Sandbox for ieVer JS Module</title>
+    <script type="text/javascript" src="lib/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="src/ieVerModule.js"></script>
+   <script type="text/javascript">
         'use strict';
-        var sandbox = angular.module('sandbox', ['mh.IEVer'], null);
-        var sandboxCtrl = sandbox.controller('sandboxCtrl', [
-                'IEVer',
-                '$scope',
-                function (
-                        IEVer,
-                        $scope) {
-                    $scope.version = IEVer.version();
-                    $scope.userAgent = IEVer.userAgent();
-                    $scope.isIE = IEVer.isIE();
-                    $scope.ieMajorVersion = IEVer.IEMajorVersion();
-                }
-        ]);
+        $(function() {
+            $("#isIE").text(ieVer.isIE);
+            $("#version").text(ieVer.version);
+            $("#userAgent").text(ieVer.userAgent);
+            $("#majorVersion").text(ieVer.majorVersion);
+        });
     </script>
 </head>
 <body>
-    <div data-ng-app="sandbox" data-ng-controller="sandboxCtrl">
-        <div>
-            <span>Version: {{version}}</span>
-        </div>
-        <div>
-            <span>User Agent: {{userAgent}}</span>
-        </div>
-        <div>
-            <span>Is IE: {{isIE}}</span>
-        </div>
-        <div>
-            <span>IE Major Version: {{ieMajorVersion}}</span>
-        </div>
+    <div>
+        <span>Version: <span id="version"></span></span>
+    </div>
+    <div>
+        <span>User Agent: <span id="userAgent"></span></span>
+    </div>
+    <div>
+        <span>Is IE: <span id="isIE"></span></span>
+    </div>
+    <div>
+        <span>IE Major Version: <span id="majorVersion"></span></span>
     </div>
 </body>
 </html>
