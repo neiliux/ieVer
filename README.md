@@ -6,8 +6,10 @@ Collection of vanilla JS Module, JQuery Plugin, and AngularJS Module used to det
 How to use
 ----------
 
-Vanilla JS:
+###Vanilla JS:
+
 Include ieVerModule.js on your page.
+
 Inspect the ieVer object which will be available on the global scope.
 ```
 $("#isIE").text(ieVer.isIE);
